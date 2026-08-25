@@ -7,10 +7,13 @@ import Productside from './Pages/Productside.jsx'
 import Profil from './Pages/Profil.jsx'
 import ProfilAnnonce from './Pages/ProfilAnnonce.jsx'
 import Signupside from './Pages/signupside.jsx'
+import { Footer } from './components/Footer/Footer.jsx'
+import { Navbar } from './components/Navbar/Navbar.jsx'
 
 function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Forside />} />
         <Route path="/kategori" element={<Ketegoriside />} />
@@ -21,6 +24,7 @@ function App() {
         <Route path="/profil/annonce" element={<ProfilAnnonce />} />
         <Route path="/opret-bruger" element={<Signupside />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
