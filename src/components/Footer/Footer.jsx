@@ -15,7 +15,6 @@ export function Footer() {
                 <h3>Kontakt</h3>
                 <p>Redningen 32</p>
                 <p>2210 Vinterby Øster</p>
-                <br />
                 <p>Email: dga@info.dk</p>
                 <p>+45 88229422</p>
             </section>

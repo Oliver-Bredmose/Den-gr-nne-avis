@@ -9,14 +9,16 @@ import ProfilAnnonce from './Pages/ProfilAnnonce.jsx'
 import Signupside from './Pages/signupside.jsx'
 import { Footer } from './components/Footer/Footer.jsx'
 import { Navbar } from './components/Navbar/Navbar.jsx'
+import { Kategorier } from './components/Kategorier/Kategorier.jsx'
 
 function App() {
   return (
     <BrowserRouter>
     <Navbar/>
+    <Kategorier/>
       <Routes>
         <Route path="/" element={<Forside />} />
-        <Route path="/kategori" element={<Ketegoriside />} />
+        <Route path="/kategori/:slug" element={<Ketegoriside />} />
         <Route path="/login" element={<Loginside />} />
         <Route path="/opret-annonce" element={<OpretAnnonceSide />} />
         <Route path="/produkt/:slug" element={<Productside />} />

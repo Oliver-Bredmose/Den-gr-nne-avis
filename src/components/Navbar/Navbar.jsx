@@ -1,6 +1,8 @@
-import { NavLink } from "react-router"
+import { NavLink } from "react-router-dom"
 import Logo from '../../assets/dga-Logo.svg'
 import style from '../../components/Navbar/Navbar.module.scss';
+import Mail from '../../assets/Mail.png'
+import Profil from '../../assets/Profiil.png'
 
 export function Navbar() {
 return(
@@ -14,13 +16,11 @@ return(
                 <NavLink to={"/OpretAnnonceSide"}>Opret Annonce</NavLink>
             </li>
             <li>
-                <NavLink to={"/estates"}>Boligere</NavLink>
+                <NavLink to={"/ProfilAnnonceSide"}><img src={Mail} alt="Mails" /></NavLink>
+    
             </li>
             <li>
-                <NavLink to={"/contact"}>Kontakt</NavLink>
-            </li>
-            <li>
-                <NavLink to={"/Profil"}>Profil</NavLink>
+                <NavLink to={"/Profil"}><img src={Profil} alt="Profil" /></NavLink>
             </li>
         </ul>
     </nav>
