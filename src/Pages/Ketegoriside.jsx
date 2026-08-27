@@ -29,6 +29,10 @@ export default function Ketegoriside() {
             {Kategori.length > 0 ? (
                 <div>{Kategori.map(produkt => (
                     <article key={produkt.id}>
+                        <img
+                            src={produkt.image}
+                            alt={produkt.name || produkt.title}
+                        />
                         <h2>{produkt.name || produkt.title}</h2>
                         <p>{produkt.description}</p>
                         <p>{produkt.price} kr.</p>
