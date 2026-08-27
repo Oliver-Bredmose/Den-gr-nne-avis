@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import style from "./../Pages/Kategoriside.module.scss"
+import { NavLink } from "react-router-dom"
 
 export default function Ketegoriside() {
     const { slug } = useParams()
@@ -11,28 +13,30 @@ export default function Ketegoriside() {
     
     useEffect(() => {
         fetch(API_URL)
-            .then(res => {
+        .then(res => { 
                 if (!res.ok) throw new Error(`HTTP ${res.status}`)
                 return res.json()
             })
             .then(data => {
                 setKategori(Array.isArray(data) ? data : data.products || [])
-                setError(null)
             })
             .catch(err => setError(err.message))
     }, [API_URL])
 
     return(
-        <div>
-            <h1>Produkter i {slug}</h1>
+        <div className={style.Kategori}>
+
             {error && <p>Kunne ikke hente produkter: {error}</p>}
             {Kategori.length > 0 ? (
                 <div>{Kategori.map(produkt => (
                     <article key={produkt.id}>
+                        
+                        <NavLink to={`/produkt/${produkt.slug}`}>
                         <img
-                            src={produkt.image}
-                            alt={produkt.name || produkt.title}
+                            src={produkt.image} alt={produkt.name || produkt.title}
                         />
+                        </NavLink>
+                        
                         <h2>{produkt.name || produkt.title}</h2>
                         <p>{produkt.description}</p>
                         <p>{produkt.price} kr.</p>

@@ -1,0 +1,26 @@
+.Kategori{
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  padding: 1rem;
+
+  img{
+    max-height: 200px;
+    max-width: 100%;
+    justify-self: center;
+    object-fit: contain;
+  }
+
+}
+
+.Kategori div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.Kategori article {
+  display: flex;
+  flex-direction: column;
+}
+
