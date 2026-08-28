@@ -9,25 +9,26 @@ import ProfilAnnonce from './Pages/ProfilAnnonce.jsx'
 import Signupside from './Pages/signupside.jsx'
 import { Footer } from './components/Footer/Footer.jsx'
 import { Navbar } from './components/Navbar/Navbar.jsx'
-import { KategorierNav } from "./components/Kategorier/KategorierNav.jsx"
+import MainLayout from './Layout/MainLayout.jsx'
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
-  <KategorierNav/>
-      <Routes>
-        <Route path="/" element={<Forside />} />
-        <Route path="/kategori/:slug" element={<Ketegoriside />} />
-        {/* <Route path="/login" element={<Loginside />} /> */}
-        <Route path="/opret-annonce" element={<OpretAnnonceSide />} />
-        <Route path="/produkt/:slug" element={<Productside />} />
-        <Route path="/profil" element={<Profil />} />
-        <Route path="/profil/annonce" element={<ProfilAnnonce />} />
-        <Route path="/opret-bruger" element={<Signupside />} />
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+  <Navbar/>
+  <Routes>
+      <Route path="/" element={<Forside />} />
+    <Route element={<MainLayout />}>
+      <Route path="/kategori/:slug" element={<Ketegoriside />} />
+      <Route path="/produkt/:slug" element={<Productside />} />
+      </Route>
+    {/* <Route path="/login" element={<Loginside />} /> */}
+    <Route path="/opret-annonce" element={<OpretAnnonceSide />} />
+    <Route path="/profil" element={<Profil />} />
+    <Route path="/profil/annonce" element={<ProfilAnnonce />} />
+    <Route path="/opret-bruger" element={<Signupside />} />
+  </Routes>
+  <Footer />
+</BrowserRouter>
   )
 }
 

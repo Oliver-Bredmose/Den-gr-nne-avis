@@ -14,7 +14,7 @@ export default function Productside() {
     useEffect(() => {
         fetch(API_URL)
         .then(res => { 
-                if (!res.ok) throw new e+rror(`HTTP ${res.status}`)
+                if (!res.ok) throw new error(`HTTP ${res.status}`)
                 return res.json()
             })
             .then(data => {
@@ -25,14 +25,15 @@ export default function Productside() {
     }, [API_URL])
 
     return(
-        <div className={style.Productsdetails}>
+        <section className={style.Productsdetails}>
+        <div>
             <img src={Products.image} alt="Product Billede" />
             <h1>{Products.name}</h1>
             <p>{Products.description}</p>
             <br />
-            <p>{Products.price}</p>
-
+            <p>Pris: {Products.price} Kr</p>
         </div>
+        </section>
     )
 }
 

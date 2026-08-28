@@ -1,13 +1,32 @@
+@use '../../globals.scss' as globals;
+
 .Navstyle{
+
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
+margin-bottom: 30px;
+padding: 20px;
+padding-bottom: 20px;
+background-color: white;
 ul{
 display: flex;
 flex-direction: row;
 
 gap: 1rem;
 list-style-type: none;
+
 }    
+}
+
+.button{
+    background-color: globals.$color-primary;
+    box-sizing: border-box;
+    padding: 10px;
+    
+    a{
+        color: white;
+        text-decoration: none;
+    }
 }

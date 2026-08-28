@@ -10,6 +10,7 @@
     background: globals.$color-primary; 
     padding: 2rem 1.5rem;
     align-items: start;
+    margin-top: auto;
 
     section{
         display: flex;
@@ -19,6 +20,15 @@
         a{
             color: white;
         }
+
+        p{
+            color: black;
+        }
+    }
+
+    form p{
+        color: black;
+
     }
 
 }
